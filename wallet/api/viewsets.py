@@ -27,7 +27,9 @@ class WalletViewSet(AbstractViewSet):
     def add_balance(self, request):
         amount = request.data.get('amount')
         if not amount or float(amount) <= 0:
-            return Response({'error': "Valor inválido"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({
+                'error': "Valor inválido"}, 
+                status=status.HTTP_400_BAD_REQUEST)
         
         wallet, created = Wallet.objects.get_or_create(user=request.user) 
         wallet.balance += Decimal(str(amount))
@@ -41,7 +43,7 @@ class WalletViewSet(AbstractViewSet):
 
 class TransferViewset(AbstractViewSet):
     queryset = Transfer.objects.all()
-    serializer_class =  TransferSerializer
+    serializer_class = TransferSerializer
     permission_classes = (IsAuthenticated,)
     
     def list(self, request):
@@ -58,7 +60,7 @@ class TransferViewset(AbstractViewSet):
 
         serializer = TransferSerializer(transfers, many=True)
         return Response(serializer.data)
-    
+
     def create(self, request):
         to_user_id = request.data.get('to_user')
         amount = request.data.get('amount')
