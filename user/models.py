@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from django.db import models
-from .abstract.abstract import AbstractManager, AbstractModel
+from .utils.models import AbstractManager, AbstractModel
 
 
 class UserManager(BaseUserManager, AbstractManager):
