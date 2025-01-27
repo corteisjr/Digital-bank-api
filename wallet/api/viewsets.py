@@ -1,3 +1,4 @@
+from decimal import Decimal 
 from user.utils.viewsets import AbstractViewSet
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -8,8 +9,9 @@ from .serializers import WalletSerializer, TransferSerializer
 
 
 class WalletViewSet(AbstractViewSet):
-    permission_classes = (IsAuthenticated)
+    permission_classes = (IsAuthenticated, )
     serializer_class = WalletSerializer
+    queryset = Wallet.objects.all()
 
     def retrieve(self, request, pk=None):
         wallet = Wallet.objects.get(user=request.user)
@@ -23,8 +25,8 @@ class WalletViewSet(AbstractViewSet):
         if not amount or float(amount) <= 0:
             return Response({'error': "Valor inválido"}, status=status.HTTP_400_BAD_REQUEST)
         
-        wallet = Wallet.objects.get(user=request.user)
-        wallet.balance += float(amount)
+        wallet, created = Wallet.objects.get_or_create(user=request.user) 
+        wallet.balance += Decimal(str(amount))
         wallet.save()
         
         return Response(
