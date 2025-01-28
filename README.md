@@ -90,7 +90,7 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento
     docker-compose exec web python manage.py createsuperuser
     ```
 
-4. Se for usar o docker
+4. Se não for usar o docker
    ```
       DATABASES = {
        'default': {
