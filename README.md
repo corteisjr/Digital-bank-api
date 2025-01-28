@@ -24,9 +24,10 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento
 4. Crie o ambiente virtual para isolar as depedências do projeto.
     ```python3.11 -m venv venv```
 5.Ative o ambiente virtual:
-    -No Windows:
+
+    - No Windows:
     ```venv\Scripts\activate```
-    -No Linux ou macOS:
+    - No Linux ou macOS:
     ```source venv/bin/activate```
 
 6. Instale as dependências do projeto:
