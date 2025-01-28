@@ -1,6 +1,6 @@
 from django.db import models
-from user.models import User
-from user.utils.models import AbstractModel, AbstractManager
+from core_app.user.models import User
+from core_app.abstract.models import AbstractModel
 
 
 class Wallet(AbstractModel):

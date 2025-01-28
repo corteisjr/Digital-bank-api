@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from user.api.serializers import UserSerializer
-from user.models import User
+from core_app.user.api.serializers import UserSerializer
+from core_app.user.models import User
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.settings import api_settings

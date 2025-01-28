@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
 
-    'user',
-    'custom_auth',
-    'wallet',
+    'core_app',
+    'core_app.user',
+    'core_app.auth',
+    'core_app.wallet',
 ]
 
 MIDDLEWARE = [
@@ -143,4 +144,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'core_app_user.User'

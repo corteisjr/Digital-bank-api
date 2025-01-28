@@ -1,8 +1,8 @@
 from rest_framework.permissions import IsAuthenticated
-from user.utils.viewsets import AbstractViewSet
+from core_app.abstract.viewsets import AbstractViewSet
 
 from .serializers import UserSerializer
-from user.models import User
+from core_app.user.models import User
 
 
 class UserViewSet(AbstractViewSet):

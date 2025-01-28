@@ -2,13 +2,13 @@ from decimal import Decimal
 from datetime import datetime
 
 
-from user.utils.viewsets import AbstractViewSet
+from core_app.abstract.viewsets import AbstractViewSet
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-from user.models import User
+from core_app.user.models import User
 from rest_framework.decorators import action
-from wallet.models import Wallet, Transfer
+from core_app.wallet.models import Wallet, Transfer
 from .serializers import WalletSerializer, TransferSerializer
 
 
@@ -93,7 +93,7 @@ class TransferViewset(AbstractViewSet):
         )
         
         from_user_wallet.balance -= Decimal(amount)
-        to_user.balance += Decimal(amount)
+        to_user_wallet.balance += Decimal(amount)
         from_user_wallet.save()
         to_user_wallet.save()
         

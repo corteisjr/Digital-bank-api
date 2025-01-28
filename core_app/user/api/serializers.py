@@ -1,5 +1,5 @@
-from user.models import User
-from user.utils.serializers import AbstractSerializer
+from core_app.user.models import User
+from core_app.abstract.serializers import AbstractSerializer
 
 
 class UserSerializer(AbstractSerializer):

@@ -1,5 +1,5 @@
 from rest_framework import routers
-from custom_auth.api.viewsets import (
+from auth.api.viewsets import (
      RegisterViewSet, 
      LoginViewSet, 
      RefreshViewSet

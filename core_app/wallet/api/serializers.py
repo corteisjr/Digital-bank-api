@@ -1,7 +1,6 @@
-from rest_framework import serializers
-from user.utils.serializers import AbstractSerializer
-from wallet.models import Wallet, Transfer
-from user.api.serializers import UserSerializer
+from core_app.abstract.serializers import AbstractSerializer
+from core_app.wallet.models import Wallet, Transfer
+from core_app.user.api.serializers import UserSerializer
 
 
 class WalletSerializer(AbstractSerializer):
@@ -12,7 +11,7 @@ class WalletSerializer(AbstractSerializer):
         fields = ['id', 'user', 'balance']
 
 
-class TransferSerializer(serializers.ModelSerializer):
+class TransferSerializer(AbstractSerializer):
     from_user = UserSerializer(read_only=True)
     to_user = UserSerializer(read_only=True)
 
