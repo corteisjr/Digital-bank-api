@@ -90,6 +90,20 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento
     docker-compose exec web python manage.py createsuperuser
     ```
 
+4. Se for usar o docker
+   ```
+      DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'NAME': config('POSTGRES_DB'),
+           'USER': config('POSTGRES_USER'),
+           'PASSWORD': config('POSTGRES_PASSWORD'),
+           'HOST': 'db',  ---> Alterar o db para localhost
+           'PORT': config('DB_PORT', default='5434')
+       }
+   }
+   ```
+
     #### NB: Não esqueça de adicionar o arquivo .env como mostrado acima!!
 
 ![image](https://github.com/user-attachments/assets/05d6fe6e-63c1-44d3-8fd2-c2a156fa71b4)
