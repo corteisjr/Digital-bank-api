@@ -91,3 +91,8 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento
     ```
 
     #### NB: Não esqueça de adicionar o arquivo .env como mostrado acima!!
+
+![image](https://github.com/user-attachments/assets/05d6fe6e-63c1-44d3-8fd2-c2a156fa71b4)
+![image](https://github.com/user-attachments/assets/f285c7e5-ba7c-4e6a-9542-725d9f698def)
+
+
